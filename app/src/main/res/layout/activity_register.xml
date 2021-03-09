@@ -8,14 +8,14 @@
     tools:context="com.example.groupworksheffxplore.RegisterPage">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/RegisterName"
         android:layout_width="402sp"
         android:layout_height="54sp"
         android:fontFamily="@font/quantify"
         android:gravity="center"
         android:text="Register"
         android:textColor="@color/white"
-        android:textSize="30sp"
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -31,6 +31,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginBottom="64dp"
         android:fontFamily="@font/quantify"
+        android:gravity="center"
         android:text="Username :"
         android:textColor="@color/white"
         android:textSize="20sp"
@@ -44,21 +45,22 @@
 
     <TextView
         android:id="@+id/registerPasswordText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="104dp"
+        android:layout_height="29dp"
         android:layout_marginEnd="36dp"
         android:layout_marginRight="36dp"
         android:fontFamily="@font/quantify"
+        android:gravity="center"
         android:text="Password :"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBaseline_toBaselineOf="@id/registerPasswordBox"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/registerPasswordBox"
-        app:layout_constraintHorizontal_bias="0.914"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.533" />
+        app:layout_constraintVertical_bias="0.521" />
 
     <EditText
         android:id="@+id/registerPasswordBox"
@@ -97,16 +99,17 @@
 
     <Button
         android:id="@+id/registerButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
         android:fontFamily="@font/quantify"
         android:gravity="center"
         android:text="REGISTER NEW ACCOUNT"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.797" />
+        app:layout_constraintVertical_bias="0.811" />
 
     <TextView
         android:id="@+id/registerConfirmPasswordText"
@@ -140,5 +143,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerPasswordBox"
         app:layout_constraintVertical_bias="0.106" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="155dp"
+        android:layout_height="135dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.075"
+        app:srcCompat="@drawable/avatarregisterlogo" />
+
+    <Button
+        android:id="@+id/backtoLoginButton"
+        android:layout_width="64sp"
+        android:layout_height="64sp"
+        android:layout_marginBottom="36dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/quantify"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin"
+        app:layout_constraintVertical_bias="0.19" />
+
+    <ImageView
+        android:id="@+id/backtoLoginIcon"
+        android:layout_width="64sp"
+        android:layout_height="64sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.946"
+        app:srcCompat="@drawable/backwardsicon" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

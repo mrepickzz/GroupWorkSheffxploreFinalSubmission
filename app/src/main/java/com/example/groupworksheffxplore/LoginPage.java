@@ -31,7 +31,7 @@ public class LoginPage extends AppCompatActivity {
         et_lpassword = (EditText) findViewById(R.id.loginPassWordBox);
 
         btn_llogin = (Button) findViewById(R.id.buttonLogin);
-        btn_lregister = (Button) findViewById(R.id.buttonRegister);
+        btn_lregister = (Button) findViewById(R.id.buttonToRegister);
 
         img_llogo =(ImageView) findViewById(R.id.loginLogo);
 
@@ -55,7 +55,6 @@ public class LoginPage extends AppCompatActivity {
 
                 Boolean checklogin = databaseHelper.CheckLogin(username, password);
                 if (checklogin == true) {
-
                     openMain();
                     Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
                 } else {
@@ -66,6 +65,7 @@ public class LoginPage extends AppCompatActivity {
             }
 
         });
+
 
         /*img_llogo.animateTransform(); {
 

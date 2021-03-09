@@ -7,4 +7,127 @@
     android:background="@color/royalblue"
     tools:context=".RegisterPage">
 
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/mainMenuText"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:layout_marginTop="100sp"
+                android:layout_marginBottom="20sp"
+                android:fontFamily="@font/quantify"
+                android:gravity="center"
+                android:text="Where to go?"
+                android:textColor="@color/white"
+                android:textSize="43sp" />
+
+            <TextView
+                android:id="@+id/parkText"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:layout_marginBottom="20sp"
+                android:fontFamily="@font/quantify"
+                android:gravity="center"
+                android:text="Parks / Green Spaces"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/parkMenuIcon"
+                android:layout_width="200sp"
+                android:layout_height="200sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20sp"
+                android:background="@drawable/parkmeuicon" />
+
+            <TextView
+                android:id="@+id/FoodText"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:layout_marginBottom="20sp"
+                android:fontFamily="@font/quantify"
+                android:gravity="center"
+                android:text="Food / Dining"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/foodMenuIcon"
+                android:layout_width="200sp"
+                android:layout_height="200sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20sp"
+                android:background="@drawable/foodmenuicon" />
+
+            <TextView
+                android:id="@+id/DrinksText"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:layout_marginBottom="20sp"
+                android:fontFamily="@font/quantify"
+                android:gravity="center"
+                android:text="Bars / Clubs"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/barMenuIcon"
+                android:layout_width="182sp"
+                android:layout_height="182sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20sp"
+                android:background="@drawable/barmenuicon" />
+
+            <TextView
+                android:id="@+id/universityText"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:layout_marginBottom="20sp"
+                android:fontFamily="@font/quantify"
+                android:gravity="center"
+                android:text="University Campus buildings"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/universityIcon"
+                android:layout_width="200sp"
+                android:layout_height="200sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20sp"
+                android:background="@drawable/schoolmenuicon" />
+            <ImageButton
+                android:id="@+id/mainMenuSettingIcon"
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20sp"
+                android:background="@drawable/settingicon" />
+
+            <ImageButton
+                android:id="@+id/returntoLoginIcon"
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:layout_marginBottom="20sp"
+                android:layout_gravity="center"
+                android:background="@drawable/backwardsicon" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

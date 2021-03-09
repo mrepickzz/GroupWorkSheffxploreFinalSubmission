@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/royalblue"
+    tools:context=".RegisterPage">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/uniMenuText"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:layout_marginTop="100sp"
+                android:layout_marginBottom="20sp"
+                android:fontFamily="@font/quantify"
+                android:gravity="center"
+                android:text="Places to Study"
+                android:textColor="@color/white"
+                android:textSize="35sp" />
+
+            <TextView
+                android:id="@+id/owenText"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:layout_marginBottom="20sp"
+                android:fontFamily="@font/quantify"
+                android:gravity="center"
+                android:text=" Owen Building"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/owenMenuIcon"
+                android:layout_width="200sp"
+                android:layout_height="200sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20sp"
+                android:background="@drawable/owenbuildingmenuicon" />
+
+            <TextView
+                android:id="@+id/heartOfCampusText"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:layout_marginBottom="20sp"
+                android:fontFamily="@font/quantify"
+                android:gravity="center"
+                android:text="Heart Of Campus"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/heartOfCampusMenuIcon"
+                android:layout_width="200sp"
+                android:layout_height="200sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20sp"
+                android:background="@drawable/heartofcampusmenuicon" />
+
+
+            <TextView
+                android:id="@+id/uniofSheffSUText"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:layout_marginBottom="20sp"
+                android:fontFamily="@font/quantify"
+                android:gravity="center"
+                android:text="Uni of Sheff SU"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/uniofSheffSUMenuIcon"
+                android:layout_width="200sp"
+                android:layout_height="200sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20sp"
+                android:background="@drawable/sheffunistudentunionmenuicon" />
+
+            <TextView
+                android:id="@+id/daimondText"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:layout_marginBottom="20sp"
+                android:fontFamily="@font/quantify"
+                android:gravity="center"
+                android:text="The Diamond"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/diamondMenuIcon"
+                android:layout_width="200sp"
+                android:layout_height="200sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20sp"
+                android:background="@drawable/diamondmenuicon" />
+
+            <ImageButton
+                android:id="@+id/uniMenuSettingIcon"
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20sp"
+                android:background="@drawable/settingicon" />
+
+            <ImageButton
+                android:id="@+id/uniReturnToMenuIcon"
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:layout_marginBottom="20sp"
+                android:layout_gravity="center"
+                android:background="@drawable/backwardsicon" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

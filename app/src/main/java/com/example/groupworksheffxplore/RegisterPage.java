@@ -1,64 +1,64 @@
 package com.example.groupworksheffxplore;
 
-import android.os.Bundle;
-import android.media.Image;
-import android.os.Bundle;
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
-import android.widget.Toast;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+import com.r0adkll.slidr.Slidr;
+import com.r0adkll.slidr.model.SlidrInterface;
 
 
-import androidx.appcompat.app.AppCompatActivity;
+public class RegisterPage extends AppCompatActivity {
 
-public class RegisterPage<databaseHelper> extends AppCompatActivity {
-    Button btn_rRegistered,btn_rReturnToLogin;
-    EditText et_rUsername, et_rPassword, et_rConfirmPassword;
+    DataBaseHelper databaseHelper;
+    private SlidrInterface slidr;
 
-    DataBaseHelper databasehelper;
-
+    EditText et_username, et_password, et_cpassword;
+    Button btn_register, btn_login, button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        et_rUsername = (EditText) findViewById(R.id.registerUserNameBox);
-        et_rPassword = (EditText) findViewById(R.id.registerPasswordBox);
-        et_rConfirmPassword = (EditText) findViewById(R.id.registerConfirmPasswordBox);
-        btn_rRegistered = (Button) findViewById(R.id.registerButton);
-        btn_rReturnToLogin = (Button) findViewById(R.id.backtoLoginButton);
+        databaseHelper = new DataBaseHelper(this);
+        et_username = (EditText)findViewById(R.id.et_username);
+        et_password = (EditText)findViewById(R.id.et_password);
+        et_cpassword = (EditText)findViewById(R.id.et_cpassword);
+        btn_register = (Button)findViewById(R.id.btn_register);
+        btn_login = (Button)findViewById(R.id.btn_login);
+        slidr = Slidr.attach(this);
 
-        btn_rReturnToLogin.setOnClickListener(new View.OnClickListener() {
+        btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                openLogin();
+                Intent intent = new Intent(RegisterPage.this, LoginPage.class);
+                startActivity(intent);
             }
         });
 
-        btn_rRegistered.setOnClickListener(new View.OnClickListener() {
+        btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = et_rUsername.getText().toString();
-                String password = et_rPassword.getText().toString();
-                String confirm = et_rConfirmPassword.getText().toString();
+                String username = et_username.getText().toString();
+                String password = et_password.getText().toString();
+                String confirm_password = et_cpassword.getText().toString();
 
-                if(username.equals("") || password.equals("") || confirm.equals("")){
+                if(username.equals("") || password.equals("") || confirm_password.equals("")){
                     Toast.makeText(getApplicationContext(), "Fields Required", Toast.LENGTH_SHORT).show();
                 }else{
-                    if(password.equals(confirm)){
-                        Boolean checkusername = databasehelper.CheckUsername(username);
+                    if(password.equals(confirm_password)){
+                        Boolean checkusername = databaseHelper.CheckUsername(username);
                         if(checkusername == true){
-                            Boolean insert = databasehelper.Insert(username, password);
+                            Boolean insert = databaseHelper.Insert(username, password);
                             if(insert == true){
                                 Toast.makeText(getApplicationContext(), "Registered", Toast.LENGTH_SHORT).show();
-                                et_rUsername.setText("");
-                                et_rPassword.setText("");
-                                et_rConfirmPassword.setText("");
-                                finish();
+                                et_username.setText("");
+                                et_password.setText("");
+                                et_cpassword.setText("");
                             }
                         }else{
                             Toast.makeText(getApplicationContext(), "Username already taken", Toast.LENGTH_SHORT).show();
@@ -70,11 +70,11 @@ public class RegisterPage<databaseHelper> extends AppCompatActivity {
             }
         });
     }
-
-    public void openLogin() {
-        Intent intent = new Intent(this, LoginPage.class);
-        startActivity(intent);
-        finish();
+    public void lockSlide(View v) {
+        slidr.lock();
     }
 
+    public void unlockSlide(View v) {
+        slidr.unlock();
+    }
 }

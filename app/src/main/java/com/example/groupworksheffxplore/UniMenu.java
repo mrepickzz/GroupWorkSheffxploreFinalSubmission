@@ -7,6 +7,10 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.r0adkll.slidr.Slidr;
+import com.r0adkll.slidr.model.SlidrInterface;
+
+
 public class UniMenu extends AppCompatActivity {
 
     private ImageButton owenLogo;
@@ -15,11 +19,14 @@ public class UniMenu extends AppCompatActivity {
     private ImageButton sheffUniSuLogo;
     private ImageButton settingLogo;
     private ImageButton backwardLogo;
+    private SlidrInterface slidr;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_uni_menu);
+        slidr = Slidr.attach(this);
 
         owenLogo = (ImageButton) findViewById(R.id.owenMenuIcon);
         heartofSheffLogo = (ImageButton) findViewById(R.id.heartOfCampusMenuIcon);

@@ -7,6 +7,9 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.r0adkll.slidr.Slidr;
+import com.r0adkll.slidr.model.SlidrInterface;
+
 public class FoodMenu extends AppCompatActivity{
 
     private ImageButton howstlogo;
@@ -14,11 +17,14 @@ public class FoodMenu extends AppCompatActivity{
     private ImageButton sheafislandlogo;
     private ImageButton settingLogo;
     private ImageButton backwardLogo;
+    private SlidrInterface slidr;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bar_menu);
+        slidr = Slidr.attach(this);
 
         howstlogo = (ImageButton) findViewById(R.id.cuckooMenuIcon);
         napolicentrologo = (ImageButton) findViewById(R.id.westStreetLiveMenuIcon);
@@ -63,7 +69,7 @@ public class FoodMenu extends AppCompatActivity{
     public void openMenu() {
         Intent intent = new Intent(this, MainMenuPage.class);
         startActivity(intent);
-        finish();
+
     }
 
     public void openSettings() {

@@ -7,7 +7,13 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.r0adkll.slidr.Slidr;
+import com.r0adkll.slidr.model.SlidrInterface;
+
 public class  BarMenu extends AppCompatActivity {
+
+    private SlidrInterface slidr;
+
 
         private ImageButton cuckoologo;
         private ImageButton weststreetliveLogo;
@@ -20,6 +26,7 @@ public class  BarMenu extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_bar_menu);
+            slidr = Slidr.attach(this);
 
             cuckoologo = (ImageButton) findViewById(R.id.cuckooMenuIcon);
             weststreetliveLogo = (ImageButton) findViewById(R.id.westStreetLiveMenuIcon);
@@ -73,7 +80,7 @@ public class  BarMenu extends AppCompatActivity {
     public void openMenu() {
         Intent intent = new Intent(this, MainMenuPage.class);
         startActivity(intent);
-        finish();
+
     }
 
     public void openSettings() {

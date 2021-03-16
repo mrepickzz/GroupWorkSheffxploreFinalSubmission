@@ -11,6 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.r0adkll.slidr.Slidr;
+import com.r0adkll.slidr.model.SlidrInterface;
+
 
 public class ParkMenu extends AppCompatActivity {
 
@@ -20,11 +23,14 @@ public class ParkMenu extends AppCompatActivity {
     private ImageButton crookesvalleyLogo;
     private ImageButton settingLogo;
     private ImageButton backwardLogo;
+    private SlidrInterface slidr;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_park_menu);
+        slidr = Slidr.attach(this);
 
         norfolkLogo = (ImageButton) findViewById(R.id.norfolkparkMenuIcon);
         westonLogo = (ImageButton) findViewById(R.id.westonParkMenuIcon);
@@ -59,18 +65,18 @@ public class ParkMenu extends AppCompatActivity {
     public void openMenu() {
         Intent intent = new Intent(this, MainMenuPage.class);
         startActivity(intent);
-        finish();
+
     }
 
     public void openSettings() {
         Intent intent = new Intent(this, SettingsPage.class);
         startActivity(intent);
-        finish();
+
     }
     public void openNorfolk() {
         Intent intent = new Intent(this, NorfolkParkPage.class);
         startActivity(intent);
-        finish();
+
     }
 
 

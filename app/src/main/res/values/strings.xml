@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GroupWorkSheffxplore</string>
+    <string name="facebook_app_id">2963420457266349</string>
+    <string name="fb_login_protocol_scheme">fb2963420457266349</string>
 </resources>

@@ -17,6 +17,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
 
 import com.facebook.AccessToken;
@@ -58,11 +59,11 @@ public class SettingsPage extends AppCompatActivity {
     private AlertDialog dialog;
     private Button popup_yesLogOut, popup_noCancel;
     private SlidrInterface slidr;
-    private CallbackManager callbackManager;
+
+    private  CallbackManager callbackManager;
     private LoginButton loginButton;
     private ImageView profilePic;
     private TextView profileName;
-    private ImageView picToPost;
     private ShareButton fbLink;
     private ShareButton fbPhoto;
 
@@ -75,11 +76,11 @@ public class SettingsPage extends AppCompatActivity {
         logOutLogo = (ImageButton) findViewById(R.id.logOutButton);
         backwardLogo = (ImageButton) findViewById(R.id.settingsPreviousPageButton);
         slidr = Slidr.attach(this);
+
         loginButton = (LoginButton) findViewById(R.id.login_button);
         profilePic = (ImageView) findViewById(R.id.profilePic);
         profileName = (TextView) findViewById(R.id.profileName);
         fbLink = (ShareButton) findViewById(R.id.fb_link);
-        picToPost = (ImageView) findViewById(R.id.heartOfCampusMenuIcon);
         fbPhoto = (ShareButton) findViewById(R.id.fb_photo);
 
 
@@ -90,7 +91,7 @@ public class SettingsPage extends AppCompatActivity {
             }
         });
 
-        logOutLogo.setOnClickListener(new View.OnClickListener() {
+        backwardLogo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openPrevious();
@@ -98,28 +99,31 @@ public class SettingsPage extends AppCompatActivity {
         });
 
         callbackManager = CallbackManager.Factory.create();
+
         loginButton.setPermissions(Arrays.asList("user_gender, user_friends"));
 
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 Log.d(TAG,"Successfully logged in");
-                Toast.makeText(getApplicationContext(), "Welcome back!"+ "user", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Welcome Back!" + "user_name", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onCancel() {
                 Log.d(TAG,"Cancelled login");
-                Toast.makeText(getApplicationContext(), "Facebook Login: Error occured", Toast.LENGTH_SHORT).show();
-                openLogin();
+                Toast.makeText(getApplicationContext(), "Error logging into Facebook", Toast.LENGTH_SHORT).show();
+
+
 
             }
 
             @Override
             public void onError(FacebookException error) {
                 Log.d(TAG,"Login attempt Failed : ERROR");
-                Toast.makeText(getApplicationContext(), "Facebook Login: Error occured", Toast.LENGTH_SHORT).show();
-                openLogin();
+                Toast.makeText(getApplicationContext(), "Invalid Credentials", Toast.LENGTH_SHORT).show();
+
+
 
             }
         });
@@ -148,14 +152,14 @@ public class SettingsPage extends AppCompatActivity {
                             String name = object.getString("name");
                             String id = object.getString("id");
                             profileName.setText(name);
-                            Picasso.get().load("https://graph.facebook.com/" + id + "/picture?type=large").into(profilePic);
+                            Picasso.get().load("https://graph.facebook.com/"+ id + "/picture?type=large").into(profilePic);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
                     }
                 });
         Bundle bundle = new Bundle();
-        bundle.putString("fields", "gender, name, id, first_name,last_name");
+        bundle.putString("fields","gender, name, id, first_name,last_name");
 
         graphRequest.setParameters(bundle);
         graphRequest.executeAsync();
@@ -164,15 +168,14 @@ public class SettingsPage extends AppCompatActivity {
                 .setContentUrl(Uri.parse("https://www.theoutdoorcity.co.uk/sheffield-city-life/attractions/norfolk-heritage-park-p761041"))
                 .setShareHashtag(new ShareHashtag.Builder()
                         .setHashtag("#Sheff-X-Plore")
-                        .setHashtag("#Student")
-                        .setHashtag("TouristApp")
-                        .setHashtag("#amazingApp").build())
-                .build();
+                        .setHashtag("#Tourism")
+                        .setHashtag("#TravelApp")
+                        .setHashtag("#SheffieldCityCentre").build())
 
+                .build();
         fbLink.setShareContent(shareLinkContent);
 
-        BitmapDrawable bitmapDrawable = (BitmapDrawable) picToPost.getDrawable();
-        Bitmap bitmap = bitmapDrawable.getBitmap();
+        Bitmap bitmap = ((BitmapDrawable) ResourcesCompat.getDrawable(getApplicationContext().getResources(), R.drawable.animation_login_logo, null)).getBitmap();
 
         SharePhoto sharePhoto = new  SharePhoto.Builder()
                 .setBitmap(bitmap)
@@ -181,8 +184,8 @@ public class SettingsPage extends AppCompatActivity {
         SharePhotoContent sharePhotoContent = new SharePhotoContent.Builder()
                 .addPhoto(sharePhoto)
                 .build();
-
         fbPhoto.setShareContent(sharePhotoContent);
+
     }
 
     AccessTokenTracker accessTokenTracker = new AccessTokenTracker() {
@@ -190,8 +193,8 @@ public class SettingsPage extends AppCompatActivity {
         protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
             if(currentAccessToken == null){
                 LoginManager.getInstance().logOut();
-                profileName.setText("Facebook User ID :");
-                profilePic.setImageResource(R.drawable.defaultprofilepic);
+                profileName.setText("Facebook user ID");
+                profilePic.setImageResource(0);
             }
         }
     };

@@ -52,25 +52,27 @@ public class  BarMenu extends AppCompatActivity {
             cuckoologo.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    openKuckoo();
 
                 }
             });
             weststreetliveLogo.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    openWessies();
 
                 }
             });
             commonroomLogo.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    openCommon();
                 }
             });
             nuserytavernlogo.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    openNursery();
                 }
             });
 
@@ -85,6 +87,26 @@ public class  BarMenu extends AppCompatActivity {
 
     public void openSettings() {
         Intent intent = new Intent(this, SettingsPage.class);
+        startActivity(intent);
+    }
+
+    public void openWessies() {
+        Intent intent = new Intent(this, WestStreetLiveBarMenu.class);
+        startActivity(intent);
+    }
+
+    public void openNursery() {
+        Intent intent = new Intent(this, NurseryTavernBarPage.class);
+        startActivity(intent);
+    }
+
+    public void openKuckoo() {
+        Intent intent = new Intent(this, KuckooBarPage.class);
+        startActivity(intent);
+    }
+
+    public void openCommon() {
+        Intent intent = new Intent(this, CommonRoomBarPage.class);
         startActivity(intent);
     }
 }

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools ="http://schemas.android.com/tools"
+    android:background="@color/royalblue"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WestStreetLiveBarMenu">
+
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView_commonroom"
+        android:layout_width="match_parent"
+        android:layout_height="300sp"
+        android:layout_margin="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/commonroom1"
+                android:layout_width="410sp"
+                android:layout_height="300sp"
+                app:srcCompat="@drawable/commonroom1" />
+
+            <ImageView
+                android:id="@+id/commonroom2"
+                android:layout_width="410sp"
+                android:layout_height="300sp"
+                app:srcCompat="@drawable/commonroom2" />
+
+            <ImageView
+                android:id="@+id/commonroom3"
+                android:layout_width="410sp"
+                android:layout_height="300sp"
+                app:srcCompat="@drawable/commonroom3" />
+
+            <ImageView
+                android:id="@+id/commonroom4"
+                android:layout_width="410sp"
+                android:layout_height="300sp"
+                app:srcCompat="@drawable/commonroom4" />
+
+            <ImageView
+                android:id="@+id/commonroom5"
+                android:layout_width="410sp"
+                android:layout_height="300sp"
+                app:srcCompat="@drawable/commonroom5" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </HorizontalScrollView>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView_commonroom"
+        android:layout_width="match_parent"
+        android:layout_height="360sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView_commonroom"
+        app:layout_constraintVertical_bias="0.737">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/commonroomInfoText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quantify"
+                android:gravity="center"
+                android:text="The Common Room "
+                android:textColor="@color/white"
+                android:textSize="35sp" />
+
+            <TextView
+                android:id="@+id/commonroomAboutText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10sp"
+                android:fontFamily="@font/quantify"
+                android:gravity="center"
+                android:text="The Common Room is home to several full-size American Pool Tables, giant plasma TV screens showing the latest sporting event from F1, Cricket and Darts to Golf, Wrestling and Horse Racing and 3 private VIP areas which can be exclusively hired. Within the rooms are 1 pool table, soft comfortable seating and plasma screens and the option to hire extra games such as giant Jenga and games consoles and can accommodate 15-20 guests."
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/giveRatingText_commonroom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="16dp"
+                android:fontFamily="@font/quantify"
+                android:gravity="left"
+                android:text="Give your Rating:"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <RatingBar
+                android:id="@+id/ratingBar_yours_commonroom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <TextView
+                android:id="@+id/textView_yourCurrentRating_commonroom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/quantify"
+                android:text="Your current Rating:"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ratingBar_yours" />
+
+            <Button
+                android:id="@+id/button_submit_commonroom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/quantify"
+                android:text="SUBMIT"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.52"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_yourCurrentRating" />
+
+            <TextView
+                android:id="@+id/textView_ratingCount_commonroom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/quantify"
+                android:text="Rating Count: 0"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_submit" />
+
+            <TextView
+                android:id="@+id/textView_sumAllRating_commonroom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/quantify"
+                android:text="Sum of all Rating: 0"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_ratingCount" />
+
+            <TextView
+                android:id="@+id/textView_averageAllRating_commonroom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/quantify"
+                android:text="Average value of all Rating: 0"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_sumAllRating" />
+
+            <RatingBar
+                android:id="@+id/ratingBar_all_commonroom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:isIndicator="true"
+                android:stepSize="0.1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_averageAllRating" />
+
+            <Button
+                android:id="@+id/button_feedback_commonroom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/quantify"
+                android:text="LEAVE FEEDBACK"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.52"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_yourCurrentRating" />
+
+            <Button
+                android:id="@+id/button_maps_commonroom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/quantify"
+                android:text="SHOW LOCATION IN MAPS"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.52"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_yourCurrentRating" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

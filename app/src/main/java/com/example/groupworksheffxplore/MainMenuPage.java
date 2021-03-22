@@ -2,6 +2,7 @@ package com.example.groupworksheffxplore;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.app.NotificationManager;
 import android.media.Image;
 import android.os.Bundle;
 import android.content.Intent;
@@ -24,6 +25,7 @@ public class MainMenuPage extends AppCompatActivity {
     private ImageButton uniLogo;
     private ImageButton settingLogo;
     private ImageButton backwardLogo;
+    private ImageButton searchLogo;
     private Button button;
     private SlidrInterface slidr;
 
@@ -38,6 +40,11 @@ public class MainMenuPage extends AppCompatActivity {
         uniLogo =  (ImageButton) findViewById(R.id.universityIcon);
         settingLogo =  (ImageButton) findViewById(R.id.mainMenuSettingIcon);
         backwardLogo = (ImageButton) findViewById(R.id.returntoLoginIcon);
+        searchLogo = (ImageButton) findViewById(R.id.searchMenuIcon_main);
+
+        NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(this.NOTIFICATION_SERVICE);
+        notificationManager.cancel(103);
+        notificationManager.cancel(104);
 
 
 
@@ -78,6 +85,12 @@ public class MainMenuPage extends AppCompatActivity {
                 openUni();
             }
         });
+        searchLogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openSearch();
+            }
+        });
 
     }
     public void openRegisterSlider(View v) {
@@ -115,6 +128,12 @@ public class MainMenuPage extends AppCompatActivity {
 
     public void openUni() {
         Intent intent = new Intent(this, UniMenu.class);
+        startActivity(intent);
+
+    }
+
+    public void openSearch() {
+        Intent intent = new Intent(this, SearchFunctionPage.class);
         startActivity(intent);
 
     }

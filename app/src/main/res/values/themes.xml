@@ -17,6 +17,13 @@
 
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
-
     </style>
+    <style name="Theme.GroupWorkSheffxplore.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.S.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.S.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

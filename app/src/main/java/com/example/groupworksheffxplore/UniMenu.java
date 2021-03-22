@@ -52,25 +52,25 @@ public class UniMenu extends AppCompatActivity {
         owenLogo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                openOwen();
             }
         });
         heartofSheffLogo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                openHeart();
             }
         });
         sheffUniSuLogo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                openSheffSU();
             }
         });
         diamondLogo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                openDiamond();
             }
         });
 
@@ -83,6 +83,27 @@ public class UniMenu extends AppCompatActivity {
 
     public void openSettings() {
         Intent intent = new Intent(this, SettingsPage.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void openOwen() {
+        Intent intent = new Intent(this, OwenBuildingPage.class);
+        startActivity(intent);
+    }
+
+    public void openSheffSU() {
+        Intent intent = new Intent(this, SheffUnionBuildingPage.class);
+        startActivity(intent);
+    }
+
+    public void openDiamond() {
+        Intent intent = new Intent(this, DiamondBuildingPage.class);
+        startActivity(intent);
+    }
+
+    public void openHeart() {
+        Intent intent = new Intent(this, HeartOfCampusBuildingPage.class);
         startActivity(intent);
     }
 

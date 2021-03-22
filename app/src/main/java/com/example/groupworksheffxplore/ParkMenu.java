@@ -60,6 +60,27 @@ public class ParkMenu extends AppCompatActivity {
                 openNorfolk();
             }
         });
+
+        westonLogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openWeston();
+            }
+        });
+
+        endcliffeLogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openEndcliffe();
+            }
+        });
+
+        crookesvalleyLogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openCrookes();
+            }
+        });
     }
 
     public void openMenu() {
@@ -78,6 +99,25 @@ public class ParkMenu extends AppCompatActivity {
         startActivity(intent);
 
     }
+    public void openEndcliffe() {
+        Intent intent = new Intent(this, EndcliffeParkPage.class);
+        startActivity(intent);
+
+    }
+
+    public void openWeston() {
+        Intent intent = new Intent(this, WestonParkPage.class);
+        startActivity(intent);
+
+    }
+
+    public void openCrookes() {
+        Intent intent = new Intent(this, CrookesValleyParkPage.class);
+        startActivity(intent);
+
+    }
+
+
 
 
 }

@@ -3,7 +3,7 @@ package com.example.groupworksheffxplore;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.media.Image;
+import android.content.Intent ;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -55,9 +55,6 @@ public class SettingsPage extends AppCompatActivity {
     //variable declarations
     private ImageButton logOutLogo;
     private ImageButton backwardLogo;
-    private AlertDialog.Builder dialogBuilder;
-    private AlertDialog dialog;
-    private Button popup_yesLogOut, popup_noCancel;
     private SlidrInterface slidr;
 
     private  CallbackManager callbackManager;
@@ -82,7 +79,6 @@ public class SettingsPage extends AppCompatActivity {
         profileName = (TextView) findViewById(R.id.profileName);
         fbLink = (ShareButton) findViewById(R.id.fb_link);
         fbPhoto = (ShareButton) findViewById(R.id.fb_photo);
-
 
         logOutLogo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,6 +122,7 @@ public class SettingsPage extends AppCompatActivity {
 
 
             }
+
         });
     }
 
@@ -165,17 +162,15 @@ public class SettingsPage extends AppCompatActivity {
         graphRequest.executeAsync();
 
         ShareLinkContent shareLinkContent = new  ShareLinkContent.Builder()
-                .setContentUrl(Uri.parse("https://www.theoutdoorcity.co.uk/sheffield-city-life/attractions/norfolk-heritage-park-p761041"))
+                .setContentUrl(Uri.parse("https://www.facebook.com/Sheff-X-Plore-103229725194906"))
                 .setShareHashtag(new ShareHashtag.Builder()
                         .setHashtag("#Sheff-X-Plore")
-                        .setHashtag("#Tourism")
-                        .setHashtag("#TravelApp")
-                        .setHashtag("#SheffieldCityCentre").build())
-
+                        .build())
                 .build();
+
         fbLink.setShareContent(shareLinkContent);
 
-        Bitmap bitmap = ((BitmapDrawable) ResourcesCompat.getDrawable(getApplicationContext().getResources(), R.drawable.animation_login_logo, null)).getBitmap();
+        Bitmap bitmap = ((BitmapDrawable) ResourcesCompat.getDrawable(getApplicationContext().getResources(), R.drawable.sheffxplorelogotopost___copy, null)).getBitmap();
 
         SharePhoto sharePhoto = new  SharePhoto.Builder()
                 .setBitmap(bitmap)
@@ -213,4 +208,3 @@ public class SettingsPage extends AppCompatActivity {
         slidr.unlock();
     }
 }
-

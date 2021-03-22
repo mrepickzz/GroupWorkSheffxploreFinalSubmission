@@ -23,14 +23,14 @@ public class FoodMenu extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bar_menu);
+        setContentView(R.layout.activity_food_menu);
         slidr = Slidr.attach(this);
 
-        howstlogo = (ImageButton) findViewById(R.id.cuckooMenuIcon);
-        napolicentrologo = (ImageButton) findViewById(R.id.westStreetLiveMenuIcon);
-        sheafislandlogo = (ImageButton) findViewById(R.id.commonRoomMenuIcon);
-        settingLogo = (ImageButton) findViewById(R.id.barMenuSettingIcon);
-        backwardLogo = (ImageButton) findViewById(R.id.barReturnToMenuIcon);
+        howstlogo = (ImageButton) findViewById(R.id.howStMenuIcon);
+        napolicentrologo = (ImageButton) findViewById(R.id.napoliPizzaMenuIcon);
+        sheafislandlogo = (ImageButton) findViewById(R.id.sheafIslandMenuIcon);
+        settingLogo = (ImageButton) findViewById(R.id.foodMenuSettingIcon);
+        backwardLogo = (ImageButton) findViewById(R.id.foodReturnToMenuIcon);
 
 
         backwardLogo.setOnClickListener(new View.OnClickListener() {
@@ -46,24 +46,28 @@ public class FoodMenu extends AppCompatActivity{
                 openSettings();
             }
         });
+
         howstlogo.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { openHowst();
 
             }
         });
+
         napolicentrologo.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { openNapoli();
 
             }
         });
+
         sheafislandlogo.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { openSheaf();
 
             }
         });
+
         }
 
     public void openMenu() {
@@ -74,6 +78,21 @@ public class FoodMenu extends AppCompatActivity{
 
     public void openSettings() {
         Intent intent = new Intent(this, SettingsPage.class);
+        startActivity(intent);
+    }
+
+    public void openHowst() {
+        Intent intent = new Intent(this, HowStFoodPage.class);
+        startActivity(intent);
+    }
+
+    public void openSheaf() {
+        Intent intent = new Intent(this, SheafIslandFoodPage.class);
+        startActivity(intent);
+    }
+
+    public void openNapoli() {
+        Intent intent = new Intent(this, NapoliCentroFoodPage.class);
         startActivity(intent);
     }
 }

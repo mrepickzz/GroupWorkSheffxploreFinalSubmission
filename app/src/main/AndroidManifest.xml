@@ -15,6 +15,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GroupWorkSheffxplore">
 
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBGm8dS1cbqZh5bC1e56dA77QVuZTG4ANQ" />
+
         <provider android:authorities="com.facebook.app.FacebookContentProvider2963420457266349"
             android:name="com.facebook.FacebookContentProvider"
             android:exported="true"/>
@@ -40,6 +48,7 @@
         </activity>
         <activity
             android:name="com.example.groupworksheffxplore.ParkMenu"
+            android:label="ParkMenu"
             android:theme="@style/Theme.GroupWorkSheffxplore.slider">
         </activity>
         <activity
@@ -53,6 +62,10 @@
         <activity
             android:name="com.example.groupworksheffxplore.NorfolkParkPage"
             android:theme="@style/Theme.GroupWorkSheffxplore.slider">
+            <intent-filter>
+                <action android:name="com.package.groupworksheffxplore.MainMenuPage" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.example.groupworksheffxplore.SettingsPage"
@@ -66,6 +79,82 @@
             android:configChanges=
                 "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
+        <activity
+            android:name=".FeedBackPage"
+            android:theme="@style/Theme.GroupWorkSheffxplore.slider">
+        </activity>
+        <activity
+            android:name=".WestonParkPage"
+            android:theme="@style/Theme.GroupWorkSheffxplore.slider">
+        </activity>
+        <activity
+            android:name=".EndcliffeParkPage"
+            android:theme="@style/Theme.GroupWorkSheffxplore.slider">
+        </activity>
+        <activity
+            android:name=".MapActivity">
+        </activity>
+        <activity
+            android:name=".CrookesValleyParkPage"
+            android:theme="@style/Theme.GroupWorkSheffxplore.slider">
+        </activity>
+        <activity
+            android:name=".HowStFoodPage"
+            android:theme="@style/Theme.GroupWorkSheffxplore.slider">
+        </activity>
+        <activity
+            android:name=".NapoliCentroFoodPage"
+            android:theme="@style/Theme.GroupWorkSheffxplore.slider">
+        </activity>
+        <activity
+            android:name=".SheafIslandFoodPage"
+            android:theme="@style/Theme.GroupWorkSheffxplore.slider">
+        </activity>
+        <activity
+            android:name=".WestStreetLiveBarMenu"
+            android:theme="@style/Theme.GroupWorkSheffxplore.slider">
+        </activity>
+        <activity
+            android:name=".KuckooBarPage"
+            android:theme="@style/Theme.GroupWorkSheffxplore.slider">
+        </activity>
+        <activity
+            android:name=".CommonRoomBarPage"
+            android:theme="@style/Theme.GroupWorkSheffxplore.slider">
+        </activity>
+        <activity
+            android:name=".NurseryTavernBarPage"
+            android:theme="@style/Theme.GroupWorkSheffxplore.slider">
+        </activity>
+        <activity
+            android:name=".OwenBuildingPage"
+            android:theme="@style/Theme.GroupWorkSheffxplore.slider">
+        </activity>
+        <activity
+            android:name=".DiamondBuildingPage"
+            android:theme="@style/Theme.GroupWorkSheffxplore.slider">
+        </activity>
+        <activity
+            android:name=".HeartOfCampusBuildingPage"
+            android:theme="@style/Theme.GroupWorkSheffxplore.slider">
+        </activity>
+        <activity
+            android:name=".SheffUnionBuildingPage"
+            android:theme="@style/Theme.GroupWorkSheffxplore.slider">
+        </activity>
+        <activity android:name=".SearchFunctionPage" />
+
+
+        <service
+            android:name = ".NotificationService"
+            android:label = "@string/app_name" >
+            <intent-filter>
+                <action
+                    android:name = "com.example.not.NotificationService" />
+                <category android:name = "android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>
